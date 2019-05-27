@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  node:
+    image: node:alpine
+    network_mode: host
+    volumes:
+      - .:/work:Z
+    working_dir: /work
+
+  python:
+    image: python:3.7-alpine
+    volumes:
+      - .:/work:Z
+    working_dir: /work
