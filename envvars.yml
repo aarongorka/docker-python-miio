@@ -1,0 +1,12 @@
+envvars:
+  - name: IP
+    desc: IP of smart plug
+    tags:
+      - plug
+  - name: TOKEN
+    desc: Token for smart plug
+    tags:
+      - plug
+tags:
+  - name: plug
+    desc: Commands for miplug

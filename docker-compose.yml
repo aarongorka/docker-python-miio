@@ -1,14 +1,17 @@
 version: '3.7'
 services:
-  node:
-    image: node:alpine
-    network_mode: host
+  python-miio:
+    image: aarongorka/python-miio
+    build: .
+    env_file: .env
+    network_mode: host  # broadcast scans
     volumes:
       - .:/work:Z
     working_dir: /work
 
-  python:
-    image: python:3.7-alpine
-    volumes:
-      - .:/work:Z
+  envvars:
+    image: flemay/envvars:0.0.6
+    env_file: .env
     working_dir: /work
+    volumes:
+      - .:/work
