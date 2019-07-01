@@ -23,7 +23,7 @@ venv:
 	sed -i '1s/.*python$$/#!\/usr\/bin\/env python/' venv/bin/*
 
 shell: .env
-	docker-compose run --rm pyton-miio sh
+	docker-compose run --rm python-miio sh
 
 .env: envvars.yml
 	touch .env
